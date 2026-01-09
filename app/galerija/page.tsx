@@ -51,7 +51,7 @@ export default function GalleryPage() {
 
       <main className="max-w-6xl mx-auto px-6 py-16">
         <div className="text-center mb-20">
-          <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tight font-sans">Pregledno. Moćno. Jednostavno.</h1>
+          <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tight font-sans">Pregledno. Inovativno. Jednostavno.</h1>
           <p className="text-xl text-slate-500 max-w-2xl mx-auto font-medium font-sans">
             Pogledajte kako StudioFlow transformiše svakodnevno vođenje vašeg salona u čisto uživanje.
           </p>
@@ -92,7 +92,7 @@ export default function GalleryPage() {
           <div className="relative z-10">
             <h2 className="text-4xl md:text-5xl font-black text-white mb-8 font-sans">Vreme je da vaš salon dobije digitalni dom.</h2>
             <Link href="/#cenovnik" className="inline-block bg-indigo-600 text-white px-12 py-5 rounded-2xl font-black text-xl hover:bg-indigo-700 hover:scale-105 transition shadow-2xl shadow-indigo-500/20 font-sans">
-              Započni besplatno – 14 dana
+              Zakazi konsultacije
             </Link>
           </div>
           {/* Dekorativni krug u pozadini */}
