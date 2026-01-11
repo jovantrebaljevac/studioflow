@@ -44,12 +44,20 @@ export default function Page() {
             </span>
           </div>
 
-          {/* DESKTOP MENI */}
-          <div className="hidden md:flex items-center gap-8 text-sm font-bold text-slate-800 uppercase tracking-widest">
-            <Link href="/" className="hover:text-indigo-600 transition">Početna</Link>
-            <a href="#funkcije" className="hover:text-indigo-600 transition">Funkcije</a>
-            <Link href="/galerija" className="hover:text-indigo-600 transition">Galerija</Link>
-            <a href="#cenovnik" className="hover:text-indigo-600 transition">Cenovnik</a>
+{/* DESKTOP MENI - Boja slova promenjena u belu (white) */}
+          <div className="hidden md:flex items-center gap-8 text-sm font-bold text-white uppercase tracking-widest">
+            <Link href="/" className="hover:text-indigo-400 transition">
+              Početna
+            </Link>
+            <a href="#funkcije" className="hover:text-indigo-400 transition">
+              Funkcije
+            </a>
+            <Link href="/galerija" className="hover:text-indigo-400 transition">
+              Galerija
+            </Link>
+            <a href="#cenovnik" className="hover:text-indigo-400 transition">
+              Cenovnik
+            </a>
             <a 
               href="mailto:click.app001@gmail.com" 
               className="bg-indigo-600 text-white px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition shadow-md"
@@ -134,7 +142,7 @@ export default function Page() {
                 href="mailto:click.app001@gmail.com"
                 className="bg-indigo-600 text-white text-lg px-10 py-5 rounded-2xl font-black hover:scale-105 transition shadow-2xl shadow-indigo-300 uppercase"
               >
-                Pokreni StudioFlow
+                Zatrazi Pristup
               </a>
               
 {/* KONTEJNER ZA DUGME - Dodat z-[50] da bi bio iznad ostalih elemenata */}
@@ -170,23 +178,59 @@ export default function Page() {
         </div>
       </section>
 
-      {/* --- FUNKCIJE --- */}
-      <section id="funkcije" className="py-24 bg-slate-50 px-6 border-t border-slate-100">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-            <Calendar className="text-indigo-600 mb-4" size={32} />
-            <h3 className="text-xl font-bold mb-2 text-slate-900">Smart Kalendar</h3>
-            <p className="text-slate-600 font-medium italic">Pregledan raspored termina bez preklapanja.</p>
+{/* --- FUNKCIJE (MODERNA VERZIJA) --- */}
+      <section id="funkcije" className="py-24 bg-white px-6 relative overflow-hidden">
+        {/* Pozadinski detalj radi dubine */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(79,70,229,0.05)_0%,transparent_50%)] pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          
+          {/* Naslov sekcije */}
+          <div className="text-center mb-20">
+            <h2 className="text-sm font-black uppercase tracking-[0.3em] text-indigo-600 mb-3">
+              Zašto StudioFlow?
+            </h2>
+            <p className="text-3xl md:text-4xl font-black text-slate-900 uppercase italic">
+              Sve što vam treba za <span className="text-indigo-600">savršen</span> studio
+            </p>
           </div>
-          <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-            <MessageSquare className="text-indigo-600 mb-4" size={32} />
-            <h3 className="text-xl font-bold mb-2 text-slate-900">Pametni podsetnici</h3>
-            <p className="text-slate-600 font-medium italic">Smanjite broj nedolazaka automatskim porukama.</p>
-          </div>
-          <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-            <MonitorSmartphone className="text-indigo-600 mb-4" size={32} />
-            <h3 className="text-xl font-bold mb-2 text-slate-900">Svi uređaji</h3>
-            <p className="text-slate-600 font-medium italic">Kontrolišite studio sa telefona ili računara.</p>
+
+          {/* Grid sa karticama - 1 kolona na mob, 3 na desktopu */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            
+            {/* Kartica 1: Pametni Kalendar */}
+            <div className="group bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 hover:border-indigo-200 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-100 hover:-translate-y-2">
+              <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center text-white mb-8 shadow-lg shadow-indigo-200 group-hover:scale-110 transition-transform">
+                <Calendar size={32} />
+              </div>
+              <h3 className="text-2xl font-black mb-4 text-slate-900 uppercase italic">Smart Kalendar</h3>
+              <p className="text-slate-600 leading-relaxed font-medium">
+                Vizuelno čist i intuitivan pregled svih termina. Sprečite dupla zakazivanja i organizujte smene zaposlenih u par klikova.
+              </p>
+            </div>
+
+            {/* Kartica 2: SMS Podsetnici */}
+            <div className="group bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 hover:border-indigo-200 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-100 hover:-translate-y-2">
+              <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center text-white mb-8 shadow-lg shadow-indigo-200 group-hover:scale-110 transition-transform">
+                <MessageSquare size={32} />
+              </div>
+              <h3 className="text-2xl font-black mb-4 text-slate-900 uppercase italic">Pametni Podsetnici</h3>
+              <p className="text-slate-600 leading-relaxed font-medium">
+                Automatske poruke klijentima smanjuju broj nedolazaka i do 80%. Vaš studio radi kao švajcarski sat, bez praznog hoda.
+              </p>
+            </div>
+
+            {/* Kartica 3: Analitika / Svi uređaji */}
+            <div className="group bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 hover:border-indigo-200 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-100 hover:-translate-y-2">
+              <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center text-white mb-8 shadow-lg shadow-indigo-200 group-hover:scale-110 transition-transform">
+                <MonitorSmartphone size={32} />
+              </div>
+              <h3 className="text-2xl font-black mb-4 text-slate-900 uppercase italic">Multi-Platform</h3>
+              <p className="text-slate-600 leading-relaxed font-medium">
+                Pristupite podacima sa telefona, tableta ili računara. Bilo gde, bilo kada – vaša firma vam je uvek na dlanu.
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
