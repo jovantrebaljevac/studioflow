@@ -30,7 +30,7 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans relative">
       
-      {/* --- NAVIGACIJA --- */}
+{/* --- NAVIGACIJA --- */}
       <nav className="absolute top-0 left-0 w-full z-[110] bg-transparent">
         <div className="flex justify-between items-center px-8 py-6 max-w-7xl mx-auto">
           
@@ -44,7 +44,7 @@ export default function Page() {
             </span>
           </div>
 
-          {/* DESKTOP MENI - Očišćen od grešaka */}
+          {/* DESKTOP MENI */}
           <div className="hidden md:flex items-center gap-8 text-sm font-bold text-slate-800 uppercase tracking-widest">
             <Link href="/" className="hover:text-indigo-600 transition">Početna</Link>
             <a href="#funkcije" className="hover:text-indigo-600 transition">Funkcije</a>
@@ -58,13 +58,13 @@ export default function Page() {
             </a>
           </div>
 
-          {/* MOBILNI HAMBURGER DUGME */}
+          {/* MOBILNI HAMBURGER - DODATO I ISPRAVLJENO */}
           <div className="md:hidden">
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-slate-900 focus:outline-none"
+              className="p-2 text-indigo-500 focus:outline-none"
             >
-              {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
+              {isMenuOpen ? <X size={34} strokeWidth={2.5} /> : <Menu size={34} strokeWidth={2.5} />}
             </button>
           </div>
         </div>
@@ -77,51 +77,53 @@ export default function Page() {
               <a href="#funkcije" onClick={() => setIsMenuOpen(false)}>Funkcije</a>
               <Link href="/galerija" onClick={() => setIsMenuOpen(false)}>Galerija</Link>
               <a href="#cenovnik" onClick={() => setIsMenuOpen(false)}>Cenovnik</a>
-              <a href="mailto:click.app001@gmail.com" className="text-indigo-600 pt-4 border-t border-slate-50">Kontakt</a>
+              <a href="mailto:click.app001@gmail.com" className="text-indigo-600 pt-4 border-t border-slate-50" onClick={() => setIsMenuOpen(false)}>Kontakt</a>
             </div>
           </div>
         )}
       </nav>
-
       {/* --- HERO SEKCIJA --- */}
-      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<section className="relative h-screen w-full flex items-center justify-center">        
         
-        
-        {/* Pozadinska slika */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=2000" 
-            alt="Moderni Salon" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]"></div>
-        </div>
-
+        {/* POZADINSKA SLIKA SA JAČIM ZATAMNJENJEM */}
+<div className="absolute inset-0 z-0">
+  <img 
+    src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=2000" 
+    alt="Moderni Salon" 
+    className="w-full h-full object-cover"
+  />
+  
+  {/* IZMENJEN OVERLAY: Sa bele prelazimo na tamnu indigo/crnu nijansu */}
+  {/* bg-slate-950/60 daje luksuznu tamnu notu, a backdrop-blur dodaje dubinu */}
+  <div className="absolute inset-0 bg-slate-950/60 backdrop-blur-[2px]"></div>
+</div>
         <div className="relative z-10 px-6 text-center max-w-6xl mx-auto pt-20">
           
-          {/* Badge */}
-          <div className="flex justify-center mb-8">
-            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-indigo-600/10 border border-indigo-600/20 backdrop-blur-md">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-500 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-600"></span>
-              </span>
-              <span className="text-xs md:text-sm font-black uppercase tracking-[0.2em] text-indigo-700">
-                Jedinstveni sistem automatizacije u Srbiji
-              </span>
-            </div>
-          </div>
+{/* AKCENTOVAN MINI BANER / BADGE */}
+<div className="flex justify-center mb-8">
+  <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-xl shadow-[0_0_20px_rgba(99,102,241,0.3)]">
+    {/* Pulsirajuća tačkica - sada jača bela/indigo */}
+    <span className="relative flex h-3 w-3">
+      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+      <span className="relative inline-flex rounded-full h-3 w-3 bg-indigo-400"></span>
+    </span>
+    
+    <span className="text-xs md:text-sm font-black uppercase tracking-[0.25em] text-white">
+      Jedinstveni sistem <span className="text-indigo-400 font-black">automatizacije</span> u Srbiji
+    </span>
+  </div>
+</div>
 
           {/* Glavni tekst sa crnim okvirom */}
           <h1 
-            className="text-xl md:text-2xl lg:text-3xl text-indigo-500 font-black mb-10 mx-auto max-w-4xl tracking-[0.05em] leading-[1.4] uppercase"
+            className="text-xl md:text-2xl lg:text-3xl text-indigo-600 font-black mb-10 mx-auto max-w-4xl tracking-[0.05em] leading-[1.4] uppercase"
             style={{ 
               textShadow: `-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 3px 3px 6px rgba(0,0,0,0.4)`
             }}
           >
             <span className="block mt-2">
               inovativni softver za moderno poslovanje koji preuzima brigu o vašem 
-              kalendaru, klijentima i terminima, dok se vi fokusirate na ono što najbolje radite.
+              kalendaru, klijentima i terminima
             </span>
           </h1>
 
@@ -135,29 +137,31 @@ export default function Page() {
                 Pokreni StudioFlow
               </a>
               
-              <div className="relative">
-                <button 
-                  onClick={() => setPrikaziDelatnosti(!prikaziDelatnosti)}
-                  className="bg-slate-900 text-white text-lg px-8 py-5 rounded-2xl font-bold hover:bg-slate-800 transition shadow-xl flex items-center gap-3"
-                >
-                  Sve delatnosti
-                  <ChevronDown className={`w-5 h-5 transition-transform ${prikaziDelatnosti ? 'rotate-180' : ''}`} />
-                </button>
+{/* KONTEJNER ZA DUGME - Dodat z-[50] da bi bio iznad ostalih elemenata */}
+<div className="relative z-[50]">
+  <button 
+    onClick={() => setPrikaziDelatnosti(!prikaziDelatnosti)}
+    className="bg-slate-900 text-white text-xl px-8 py-5 rounded-2xl font-bold hover:bg-slate-800 transition shadow-xl flex items-center gap-3 w-full md:w-auto justify-center"
+  >
+    Sve delatnosti
+    <ChevronDown className={`w-5 h-5 transition-transform ${prikaziDelatnosti ? 'rotate-180' : ''}`} />
+  </button>
 
-                {prikaziDelatnosti && (
-                  <div className="absolute left-1/2 -translate-x-1/2 mt-4 w-64 bg-white border border-slate-200 rounded-2xl shadow-2xl z-[150] overflow-hidden py-2">
-                    {delatnosti.map((stavka, index) => (
-                      <button 
-                        key={index} 
-                        className="w-full text-left px-6 py-3 text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors font-semibold border-b border-slate-50 last:border-0"
-                        onClick={() => setPrikaziDelatnosti(false)}
-                      >
-                        {stavka}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
+  {/* PADAJUĆI MENI - Dodat z-[100] i fiksna pozicija da ga ništa ne seče */}
+  {prikaziDelatnosti && (
+    <div className="absolute left-1/2 -translate-x-1/2 mt-4 w-72 bg-white border border-slate-200 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] z-[100] overflow-hidden py-2 animate-in fade-in zoom-in duration-200">
+      {delatnosti.map((stavka, index) => (
+        <button 
+          key={index} 
+          className="w-full text-left px-6 py-4 text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors font-bold border-b border-slate-50 last:border-0 text-sm uppercase tracking-wide"
+          onClick={() => setPrikaziDelatnosti(false)}
+        >
+          {stavka}
+        </button>
+      ))}
+    </div>
+  )}
+</div>
             </div>
             <p className="text-xs text-indigo-900/60 font-black uppercase tracking-widest bg-white/50 px-4 py-1 rounded-full backdrop-blur-sm">
               Cloud rešenje • Podaci dostupni 24/7
