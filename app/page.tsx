@@ -142,7 +142,7 @@ export default function Page() {
                 href="mailto:click.app001@gmail.com"
                 className="bg-indigo-600 text-white text-lg px-10 py-5 rounded-2xl font-black hover:scale-105 transition shadow-2xl shadow-indigo-300 uppercase"
               >
-                Zatrazi Pristup
+                Zatrazi pristup
               </a>
               
 {/* KONTEJNER ZA DUGME - Dodat z-[50] da bi bio iznad ostalih elemenata */}
@@ -177,6 +177,16 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <div className="bg-slate-900 py-8 border-y border-white/5">
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="flex flex-wrap justify-center items-center gap-8 md:gap-20 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+      <span className="text-white font-black italic text-xl tracking-tighter italic">FRIZERSKI SALONI</span>
+      <span className="text-white font-black italic text-xl tracking-tighter italic">KOZMETIČARI</span>
+      <span className="text-white font-black italic text-xl tracking-tighter italic">BERBERNICE</span>
+      <span className="text-white font-black italic text-xl tracking-tighter italic">SPA CENTRI</span>
+    </div>
+  </div>
+</div>
 
 {/* --- FUNKCIJE (MODERNA VERZIJA) --- */}
       <section id="funkcije" className="py-24 bg-white px-6 relative overflow-hidden">
